@@ -1,9 +1,9 @@
-FROM        php:7.4-cli
+FROM        7.4-cli-alpine3.11
 
 LABEL       author="Dieter Blancke"
 
 # Installing required libraries
-RUN         apt update -y && apt install curl software-properties-common git libzip-dev zip unzip -y
+RUN         apk add --update curl software-properties-common git libzip-dev zip unzip
 
 # Installing zip extension
 RUN         docker-php-ext-install zip
